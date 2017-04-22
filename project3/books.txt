@@ -1,0 +1,5 @@
+War and Peace, Tolstoy, 456, false, 0
+Programming in C, Deitel, 123, false, 0
+The Boat Who Wouldn't Float, Mowat, 987, false, 0
+The Secret, Byrne, 876, false, 0
+The power of Intention, Dyer, 765, false, 0

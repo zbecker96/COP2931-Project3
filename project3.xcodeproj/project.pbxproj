@@ -7,24 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EE4F9741E9D2E380028BBEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F9731E9D2E380028BBEF /* main.cpp */; };
+		5EE4F9741E9D2E380028BBEF /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F9731E9D2E380028BBEF /* library.cpp */; };
+		5EE4F97D1E9D2E930028BBEF /* book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F97C1E9D2E930028BBEF /* book.cpp */; };
+		5EE4F97F1E9D2EBE0028BBEF /* card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F97E1E9D2EBE0028BBEF /* card.cpp */; };
+		5EE4F9AA1EA6AB770028BBEF /* Library-1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F9A91EA6AB770028BBEF /* Library-1.cpp */; };
+		5EE4F9AE1EAB9D4B0028BBEF /* books.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EE4F9AB1EAB9D2B0028BBEF /* books.txt */; };
+		5EE4F9AF1EAB9D4B0028BBEF /* cards.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EE4F9AC1EAB9D2B0028BBEF /* cards.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5EE4F96E1E9D2E380028BBEF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 6;
 			files = (
+				5EE4F9AE1EAB9D4B0028BBEF /* books.txt in CopyFiles */,
+				5EE4F9AF1EAB9D4B0028BBEF /* cards.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5EE4F9701E9D2E380028BBEF /* project3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project3; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EE4F9731E9D2E380028BBEF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5EE4F9731E9D2E380028BBEF /* library.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = library.cpp; sourceTree = "<group>"; };
+		5EE4F97A1E9D2E710028BBEF /* book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = book.h; sourceTree = "<group>"; };
+		5EE4F97B1E9D2E7A0028BBEF /* card.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = card.h; sourceTree = "<group>"; };
+		5EE4F97C1E9D2E930028BBEF /* book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = book.cpp; sourceTree = "<group>"; };
+		5EE4F97E1E9D2EBE0028BBEF /* card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = card.cpp; sourceTree = "<group>"; };
+		5EE4F9A91EA6AB770028BBEF /* Library-1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Library-1.cpp"; sourceTree = "<group>"; };
+		5EE4F9AB1EAB9D2B0028BBEF /* books.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = books.txt; sourceTree = "<group>"; };
+		5EE4F9AC1EAB9D2B0028BBEF /* cards.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cards.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +71,14 @@
 		5EE4F9721E9D2E380028BBEF /* project3 */ = {
 			isa = PBXGroup;
 			children = (
-				5EE4F9731E9D2E380028BBEF /* main.cpp */,
+				5EE4F9AB1EAB9D2B0028BBEF /* books.txt */,
+				5EE4F9AC1EAB9D2B0028BBEF /* cards.txt */,
+				5EE4F9A91EA6AB770028BBEF /* Library-1.cpp */,
+				5EE4F9731E9D2E380028BBEF /* library.cpp */,
+				5EE4F97B1E9D2E7A0028BBEF /* card.h */,
+				5EE4F97E1E9D2EBE0028BBEF /* card.cpp */,
+				5EE4F97A1E9D2E710028BBEF /* book.h */,
+				5EE4F97C1E9D2E930028BBEF /* book.cpp */,
 			);
 			path = project3;
 			sourceTree = "<group>";
@@ -120,7 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EE4F9741E9D2E380028BBEF /* main.cpp in Sources */,
+				5EE4F97D1E9D2E930028BBEF /* book.cpp in Sources */,
+				5EE4F9AA1EA6AB770028BBEF /* Library-1.cpp in Sources */,
+				5EE4F9741E9D2E380028BBEF /* library.cpp in Sources */,
+				5EE4F97F1E9D2EBE0028BBEF /* card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +275,7 @@
 				5EE4F9791E9D2E380028BBEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
