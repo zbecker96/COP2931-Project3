@@ -10,24 +10,29 @@
 #define bookHeader_h
 
 #include <iostream>
+
 using namespace std;
 
-class Book{
+
+#define TITLE_SIZE 30
+#define AUTHOR_SIZE 10
+
+class Book {
 
 private:
     
-    char title[30];
-    char author[10];
-    int bookID;
-    int cardID;
+    char _title[TITLE_SIZE];
+    char _author[AUTHOR_SIZE];
+    int _bookID;
+    int _cardID;
     
 public:
     
     Book(); //Default constructor
-    Book(char t[], char a[], int bID, int cID);
+    Book(char title[], char author[], int bookID, int cardID);
    
     int getCardID();
-    void setCardID(int cID);
+    void setCardID(int cardID);
     
     void printTitle();
     void printAuthor();

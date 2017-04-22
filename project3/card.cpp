@@ -13,8 +13,7 @@
 
 using namespace std;
 
-Card::Card(){
-    
+Card::Card() {
     _name[0] ='\0';
     _phone[0] = '\0';
     _cardID = 0;

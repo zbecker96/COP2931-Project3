@@ -13,40 +13,59 @@
 
 using namespace std;
 
-Book::Book(){
-    title[0] = '\0'; //nullifies character array to initialize it
-    author[0] = '\0';
-    bookID = 0;
-    cardID = 0;
+Book::Book() {
+    _title[0] = '\0'; //nullifies character array to initialize it
+    _author[0] = '\0';
+    _bookID = 0;
+    _cardID = 0;
 }
 
-Book::Book(char t[], char a[], int bID, int cID){
-    bookID = bID;
-    cardID = cID;
-    strcpy(title, t);
-    strcpy(author, a);
+Book::Book(char title[], char author[], int bookID, int cardID) {
+    _bookID = bookID;
+    _cardID = cardID;
+    strncpy(_title, title, TITLE_SIZE);
+    strncpy(_author, author, AUTHOR_SIZE);
 }
 
-int Book::getCardID(){
-    return cardID;
+/**
+ Get Card ID
+
+ @return Card ID
+ */
+int Book::getCardID() {
+    return _cardID;
 }
 
-void Book::setCardID(int cID){
-    cardID = cID;
+/**
+ Set Card ID
+
+ @param cardID Card ID
+ */
+void Book::setCardID(int cardID) {
+    _cardID = cardID;
 }
 
-void Book::printTitle(){
-    cout<< title;
+/**
+ Print Title
+ */
+void Book::printTitle() {
+    cout << _title;
 }
 
-void Book::printAuthor(){
-    cout<<"Written by: " <<author;
+/**
+ Print Author
+ */
+void Book::printAuthor() {
+    cout << "Written by: " << _author;
 }
 
-void Book::print(){
-    cout<< bookID << ":" <<endl
-        << title << endl
-        <<author <<endl
-        <<((cardID==0 )? "not Checked out" : "checked out to card " + to_string(cardID));
+/**
+ Print Book Information
+ */
+void Book::print() {
+    cout << _bookID << ":" << endl
+         << _title  << endl
+         << _author << endl
+         << ((_cardID == 0 ) ? "not Checked out" : "checked out to card " + to_string(_cardID));
 }
 
