@@ -163,6 +163,10 @@ int Library::showMenu(){
         cout << "4. Check in a book          " << endl;
         cout << "5. Create a new library card" << endl;
         cout << "6. Exit the system          " << endl;
+        
+        // Read a single digit.
+        // Note:  I had trouble validating the input as a single digit.  Googling turned up this suggested fix which appears working:
+        // http://stackoverflow.com/questions/5131647/why-would-we-call-cin-clear-and-cin-ignore-after-reading-input
         cin >> choice;
         if (cin.fail()) {
             choice = 0;
