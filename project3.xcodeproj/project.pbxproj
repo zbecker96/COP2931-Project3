@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EAD28231EABE1CC00831CB0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD28221EABE1CC00831CB0 /* main.cpp */; };
 		5EE4F9741E9D2E380028BBEF /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F9731E9D2E380028BBEF /* library.cpp */; };
 		5EE4F97D1E9D2E930028BBEF /* book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F97C1E9D2E930028BBEF /* book.cpp */; };
 		5EE4F97F1E9D2EBE0028BBEF /* card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4F97E1E9D2EBE0028BBEF /* card.cpp */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5EAD28221EABE1CC00831CB0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5EAD28261EABE22700831CB0 /* library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = library.h; sourceTree = "<group>"; };
 		5EE4F9701E9D2E380028BBEF /* project3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project3; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE4F9731E9D2E380028BBEF /* library.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = library.cpp; sourceTree = "<group>"; };
 		5EE4F97A1E9D2E710028BBEF /* book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = book.h; sourceTree = "<group>"; };
@@ -52,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EAD28241EABE1E100831CB0 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				5EE4F9AB1EAB9D2B0028BBEF /* books.txt */,
+				5EE4F9AC1EAB9D2B0028BBEF /* cards.txt */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		5EAD28251EABE1ED00831CB0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE4F97B1E9D2E7A0028BBEF /* card.h */,
+				5EE4F97E1E9D2EBE0028BBEF /* card.cpp */,
+				5EE4F97A1E9D2E710028BBEF /* book.h */,
+				5EE4F97C1E9D2E930028BBEF /* book.cpp */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		5EE4F9671E9D2E380028BBEF = {
 			isa = PBXGroup;
 			children = (
@@ -71,14 +94,12 @@
 		5EE4F9721E9D2E380028BBEF /* project3 */ = {
 			isa = PBXGroup;
 			children = (
-				5EE4F9AB1EAB9D2B0028BBEF /* books.txt */,
-				5EE4F9AC1EAB9D2B0028BBEF /* cards.txt */,
 				5EE4F9A91EA6AB770028BBEF /* Library-1.cpp */,
+				5EAD28221EABE1CC00831CB0 /* main.cpp */,
+				5EAD28261EABE22700831CB0 /* library.h */,
 				5EE4F9731E9D2E380028BBEF /* library.cpp */,
-				5EE4F97B1E9D2E7A0028BBEF /* card.h */,
-				5EE4F97E1E9D2EBE0028BBEF /* card.cpp */,
-				5EE4F97A1E9D2E710028BBEF /* book.h */,
-				5EE4F97C1E9D2E930028BBEF /* book.cpp */,
+				5EAD28251EABE1ED00831CB0 /* model */,
+				5EAD28241EABE1E100831CB0 /* data */,
 			);
 			path = project3;
 			sourceTree = "<group>";
@@ -144,6 +165,7 @@
 				5EE4F97D1E9D2E930028BBEF /* book.cpp in Sources */,
 				5EE4F9AA1EA6AB770028BBEF /* Library-1.cpp in Sources */,
 				5EE4F9741E9D2E380028BBEF /* library.cpp in Sources */,
+				5EAD28231EABE1CC00831CB0 /* main.cpp in Sources */,
 				5EE4F97F1E9D2EBE0028BBEF /* card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,7 @@ Card::Card() {
 }
 
 Card::Card(char name[], char phone[], int cardID) {
-    strncpy(_name, name, NAME_SIZE);
+    strncpy(_name, name, NAME_SIZE); //dad said its more secure of a coding pratice to use strncpy than strcpy works the same tho.
     strncpy(_phone, phone, PHONE_SIZE);
     _cardID = cardID;
 }
@@ -45,4 +45,11 @@ int Card::getBookID() {
 
 void Card::setBookID(int bookID) {
     _bookID = bookID;
+}
+
+/**
+ Print Card
+ */
+void Card::print() {
+    cout << _cardID << ": " << _name << " " << _phone << endl;
 }

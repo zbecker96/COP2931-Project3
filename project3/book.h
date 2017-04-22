@@ -29,7 +29,7 @@ private:
 public:
     
     Book(); //Default constructor
-    Book(char title[], char author[], int bookID, int cardID);
+    Book(char title[], char author[], int bookID);
    
     int getCardID();
     void setCardID(int cardID);
