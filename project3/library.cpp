@@ -25,10 +25,12 @@ Library::Library() {
  */
 void Library::run() {
 
+    //catches a failure to read any file
     if (!readCardFile() || !readBookFile()) {
         exit(1);
     }
 
+    //if the files are read it progresses on to
     int choice = showMenu();
     while (choice != 6) {
         switch (choice) {
@@ -170,8 +172,9 @@ int Library::showMenu(){
         cin >> choice;
         if (cin.fail()) {
             choice = 0;
+            //clears the input buffer or else if will run the loop however many numebr of characters you input lol
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cin.ignore(10000,'\n');//ignores a bunch of stuff, can use numeric_limits<streamsize>::max() instead of 10000
         }
     }
     return choice;
@@ -195,12 +198,31 @@ void Library::showAllBooks() {
 
 void Library::checkOutBook() {
     
+    
+    
 }
 
 void Library::checkInBook() {
     
 }
 
+
 void Library::createNewLibraryCard() {
+    
+    char name, phone;
+    
+    
+    cout << "Please enter the name associated with the card: " << endl;
+    cin >> name;
+
+    cout << "Please enter the phone number associated with the card: " << endl;
+    cin >> phone;
+    
+    Card temp = Card(&name, &phone, _numCards);
+    
+    _cards[_numCards] = temp;
+    
+    _numCards++;
+    
     
 }

@@ -20,12 +20,15 @@ private:
     
     Card _cards[MAX_CARDS];
     Book _books[MAX_BOOKS];
+    
     int _numCards = 0;
     int _numBooks = 0;
 
     bool readCardFile();
     bool readBookFile();
+    
     int showMenu();
+    
     void showAllLibraryCards();
     void showAllBooks();
     void checkOutBook();
