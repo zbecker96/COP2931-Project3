@@ -10,6 +10,7 @@
 #include <iostream> //input output stream
 #include <fstream> //file stream (input and output)
 #include <limits>
+#include <string>
 #include "library.h"
 
 
@@ -17,11 +18,14 @@ using namespace std;
 
 #define JUNK_SIZE 40
 
+//creates the library
 Library::Library() {
 }
 
-/**
+/*
+ 
  Run the Library application
+ 
  */
 void Library::run() {
 
@@ -32,6 +36,7 @@ void Library::run() {
 
     //if the files are read it progresses on to
     int choice = showMenu();
+    
     while (choice != 6) {
         switch (choice) {
             case 1:
@@ -160,13 +165,16 @@ int Library::showMenu(){
     int choice = 0;
     while (choice < 1 || choice > 6){
         cout << endl << "Menu: " << endl;
-        cout << "----------------------------" << endl;
+        cout << "————————————————————————————" << endl;
         cout << "1. Show all library cards.  " << endl;
         cout << "2. Show all books           " << endl;
         cout << "3. Check out a book         " << endl;
         cout << "4. Check in a book          " << endl;
         cout << "5. Create a new library card" << endl;
         cout << "6. Exit the system          " << endl;
+        cout << "————————————————————————————" << endl;
+        cout << "Enter a selection:          " << endl;
+        
         
         // Read a single digit.
         // Note:  I had trouble validating the input as a single digit.  Googling turned up this suggested fix which appears working:
@@ -182,33 +190,152 @@ int Library::showMenu(){
     return choice;
 }
 
+
+/*
+ shows library cards
+ 
+ 
+ */
+
 void Library::showAllLibraryCards() {
     cout << endl << "Cards: " << endl;
-    cout << "----------------------------" << endl;
+      cout << "————————————————————————————" << endl;
     for (int i = 0; i < _numCards; i++) {
         _cards[i].print();
     }
 }
 
+/*
+ 
+ Shows All Books in Library
+ 
+ */
+
 void Library::showAllBooks() {
     cout << endl << "Books: " << endl;
-    cout << "----------------------------" << endl;
+      cout << "————————————————————————————" << endl;
     for (int i = 0; i < _numBooks; i++) {
         _books[i].print();
     }
 }
 
+
+/*
+ 
+ checks out book
+ 
+ */
+
 void Library::checkOutBook() {
     
+    int bookN = 0; int cardN = 0;
+    int card = 0; int book = 0;
+    
+    //get card id
+    cout << "Enter the Card ID: " << endl;
+    cin >> cardN;
+    
+    //search for it
+    while( card < _numCards && cardN != _cards[card].getCardID()){
+        card++;
+    }
+    
+    //if not foudn return
+    if(card == _numCards){
+        cout << "Cards not found" << endl;
+        return;
+    }
+    
+    //if found do the yhave book?
+    if(_cards[card].getBookID() != 0) {
+        cout << "Must check in other book first" << endl;
+        return;
+    }
+    
+    //--------
+    
+    //get book id
+    cout << "Enter the Book ID you wish to check out" << endl;
+    cin >> bookN;
+    
+    while(book < _numBooks && bookN != _books[book].getBookID()){
+        book++;
+    }
+    
+    //search for book id
+    if(book == _numBooks){
+        cout << "Book not found " << endl;
+        return;
+    }
+
+    
+    //if found, checked out?
+    
+    if(_books[book].getCardID() != 0){
+        cout << "book already checked out " << endl;
+        return;
+    }
+    
+    
+    _cards[card].setBookID(bookN);
+    
+    _books[book].setCardID(cardN);
     
     
     
 }
+
+/*
+ 
+ checks in a book
+ 
+ */
 
 void Library::checkInBook() {
     
+    int bookN = 0; int cardN = 0;
+    int card = 0; int book = 0;
+    
+    //get card id
+    cout << "Enter the Card ID: " << endl;
+    cin >> cardN;
+    
+    //search for it
+    while( card < _numCards && cardN != _cards[card].getCardID()){
+        card++;
+    }
+    
+    //if not foudn return
+    if(card == _numCards){
+        cout << "Card not found" << endl;
+        return;
+    }
+    
+    //get book id
+    cout << "Enter the Book ID you wish to check in" << endl;
+    cin >> bookN;
+    
+    while(book < _numBooks && bookN != _books[book].getBookID()){
+        book++;
+    }
+    
+    //search for book id
+    if(book == _numBooks){
+        cout << "Book not found " << endl;
+        return;
+    }
+    
+    _cards[card].setBookID(0);
+    
+    _books[book].setCardID(0);
+    
 }
 
+/*
+ 
+ creates a new library card
+ 
+ */
 
 void Library::createNewLibraryCard() {
     
@@ -216,12 +343,14 @@ void Library::createNewLibraryCard() {
     char phone[PHONE_SIZE];
     
     
-    cout << "Please enter the name associated with the card: " << endl;
+    cout << endl << "Please enter the card name:" << endl;
+    cout << "Use underscores for spaces " << endl;
     cin >> name;
-
-    cout << "Please enter the phone number associated with the card: " << endl;
-    cin >> phone;
     
+    cout << endl << "Please enter the cards phone number:" << endl;
+    cin >> phone;
+
+  
     Card temp = Card(name, phone, _numCards);
     
     _cards[_numCards] = temp;

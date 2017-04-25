@@ -37,6 +37,12 @@ int Card::getBookID() {
     return _bookID;
 }
 
+
+int Card::getCardID() {
+    return _cardID;
+}
+
+
 /**
  Set Book ID
 

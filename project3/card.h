@@ -31,6 +31,7 @@ public:
     
     void setBookID(int bookID);
     int getBookID();
+    int getCardID();
     
     void print();
     

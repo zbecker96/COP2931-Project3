@@ -27,6 +27,17 @@ Book::Book(char title[], char author[], int bookID) {
     strncpy(_author, author, AUTHOR_SIZE);
 }
 
+/*
+ Get Book ID
+ @ returns book ID
+ */
+
+int Book::getBookID() {
+    return _bookID;
+}
+
+
+
 /**
  Get Card ID
 
