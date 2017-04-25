@@ -110,8 +110,10 @@ bool Library::readCardFile() {
  @return true if succeeded
  */
 bool Library::readBookFile() {
+    
     cout << "Opening Books.txt" << endl;
     ifstream bookInput("books.txt");
+    
     if(!bookInput) {
         cout << "File not found! " << endl
         << "books.txt is unavailable check file path." ;
@@ -200,6 +202,7 @@ void Library::checkOutBook() {
     
     
     
+    
 }
 
 void Library::checkInBook() {
@@ -209,7 +212,8 @@ void Library::checkInBook() {
 
 void Library::createNewLibraryCard() {
     
-    char name, phone;
+    char name[NAME_SIZE];
+    char phone[PHONE_SIZE];
     
     
     cout << "Please enter the name associated with the card: " << endl;
@@ -218,7 +222,7 @@ void Library::createNewLibraryCard() {
     cout << "Please enter the phone number associated with the card: " << endl;
     cin >> phone;
     
-    Card temp = Card(&name, &phone, _numCards);
+    Card temp = Card(name, phone, _numCards);
     
     _cards[_numCards] = temp;
     
