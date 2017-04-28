@@ -162,8 +162,13 @@ bool Library::readBookFile() {
  @return The command number from 1-6
  */
 int Library::showMenu(){
+    
     int choice = 0;
+    
+    
+    
     while (choice < 1 || choice > 6){
+        
         cout << endl << "Menu: " << endl;
         cout << "————————————————————————————" << endl;
         cout << "1. Show all library cards.  " << endl;
@@ -176,9 +181,12 @@ int Library::showMenu(){
         cout << "Enter a selection:          " << endl;
         
         
+        cin.clear();
+        
         // Read a single digit.
         // Note:  I had trouble validating the input as a single digit.  Googling turned up this suggested fix which appears working:
         // http://stackoverflow.com/questions/5131647/why-would-we-call-cin-clear-and-cin-ignore-after-reading-input
+
         cin >> choice;
         if (cin.fail()) {
             choice = 0;
@@ -198,11 +206,16 @@ int Library::showMenu(){
  */
 
 void Library::showAllLibraryCards() {
+    
     cout << endl << "Cards: " << endl;
-      cout << "————————————————————————————" << endl;
+    cout << "————————————————————————————" << endl;
+    
     for (int i = 0; i < _numCards; i++) {
         _cards[i].print();
     }
+    
+    cout << "————————————————————————————" << endl;
+
 }
 
 /*
@@ -213,10 +226,14 @@ void Library::showAllLibraryCards() {
 
 void Library::showAllBooks() {
     cout << endl << "Books: " << endl;
-      cout << "————————————————————————————" << endl;
+    cout << "————————————————————————————" << endl;
+    
     for (int i = 0; i < _numBooks; i++) {
         _books[i].print();
     }
+    
+    cout << "————————————————————————————" << endl;
+
 }
 
 
@@ -343,9 +360,13 @@ void Library::createNewLibraryCard() {
     char phone[PHONE_SIZE];
     
     
+    //clear input buffer
+    cin.clear();
+    cin.ignore(10000,'\n');//ignores a bunch of stuff, can use numeric_limits<streamsize>::max() instead of 10000
+    
+
     cout << endl << "Please enter the card name:" << endl;
-    cout << "Use underscores for spaces " << endl;
-    cin >> name;
+    cin.getline(name, NAME_SIZE);
     
     cout << endl << "Please enter the cards phone number:" << endl;
     cin >> phone;

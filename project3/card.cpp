@@ -22,6 +22,7 @@ Card::Card() {
 }
 
 Card::Card(char name[], char phone[], int cardID) {
+    _bookID = 0;
     strncpy(_name, name, NAME_SIZE); //dad said its more secure of a coding pratice to use strncpy than strcpy works the same tho.
     strncpy(_phone, phone, PHONE_SIZE);
     _cardID = cardID;

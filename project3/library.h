@@ -24,6 +24,8 @@ private:
     int _numCards = 0;
     int _numBooks = 0;
 
+    
+    //intentionally private
     bool readCardFile();
     bool readBookFile();
     

@@ -14,6 +14,8 @@
 using namespace std;
 
 Book::Book() {
+    //underscores for class variables (easy way to know the difference)
+    
     _title[0] = '\0'; //nullifies character array to initialize it
     _author[0] = '\0';
     _bookID = 0;
@@ -74,8 +76,8 @@ void Book::printAuthor() {
  Print Book Information
  */
 void Book::print() {
-    cout << _bookID << ": "<< _title  << " "<< _author
-         << ((_cardID == 0 ) ? " not Checked out" : " checked out to card" + to_string(_cardID))
+    cout << _bookID << ": "<< _title  << " "<< _author 
+         << ((_cardID == 0 ) ? " not Checked out" : " checked out to card" + to_string(_cardID)) //to_string() turns it into a string
     << endl;
 }
 
